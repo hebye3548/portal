@@ -1,6 +1,5 @@
 (function(){
-	angular.module('App').controller('LoginCtrl',[function(){
-		var self = this;
-		self.username='hebye';
+	angular.module('App').controller('LoginCtrl',['$scope',function($scope){
+		$scope.rememberMe='h'
 	}])
 })()

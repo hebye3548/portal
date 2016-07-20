@@ -79,14 +79,21 @@ gulp.task('libStyle',function(){
         .pipe(concat(config.lib.style.dist))
         .pipe(gulp.dest(config.lib.style.dest));
 });
+//合并并移动libImage
+gulp.task('libImage',function(){
+  return gulp.src(config.lib.image.src)
+        .pipe(gulp.dest(config.lib.image.dest));
+});
 //合并并移动公共JS资源
 gulp.task('appScriptResource',function(){
   return gulp.src(config.appResource.script.src)
           .pipe(concat(config.appResource.script.dist))
           .pipe(gulp.dest(config.appResource.script.dest));
 });
-//合并并移动公共css资源
-gulp.task('mergeApp',['libScript','libStyle','appScriptResource']);
+//合并并移动公共资源
+gulp.task('mergeApp',['appScriptResource']);
+//合并并移动lib
+gulp.task('lib',['libScript','libStyle','libImage']);
 //
 
 gulp.task('connect',function(){
@@ -98,4 +105,4 @@ gulp.task('connect',function(){
           }*/
 	});
 });
-gulp.task('default',['clean','style','script','view','font','mergeApp','connect','watch']);
+gulp.task('default',['clean','style','script','view','font','mergeApp','lib','connect','watch']);

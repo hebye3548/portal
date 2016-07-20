@@ -19,7 +19,7 @@ module.exports={
         'suffix':'.js'
     },
     'font':{
-        'src':'develop/common/lib/startbootstrap-sb-admin/fonts/*',
+        'src':['develop/common/lib/admin-lte/bootstrap/fonts/*','develop/common/lib/Ionicons/fonts/*','develop/common/lib/font-awesome/fonts/*'],
         'dest':'webapp/fonts'
     },
     'view': {
@@ -43,28 +43,45 @@ module.exports={
                 'develop/common/lib/angular/angular.js',
                 'develop/common/lib/angular-ui-router/release/angular-ui-router.js',
                 'develop/common/lib/oclazyload/dist/ocLazyLoad.js',
-                'develop/common/lib/startbootstrap-sb-admin/js/jquery.js',
-                'develop/common/lib/startbootstrap-sb-admin/js/bootstrap.js',
+                'develop/common/lib/admin-lte/plugins/jQuery/jquery-2.2.3.min.js',
+                'develop/common/lib/admin-lte/bootstrap/js/bootstrap.min.js',
+                'develop/common/lib/admin-lte/plugins/morris/morris.min.js',
+                'develop/common/lib/moment/min/moment.min.js',
+                'develop/common/lib/admin-lte/plugins/iCheck/icheck.js',
+                'develop/common/lib/admin-lte/plugins/knob/jquery.knob.js',
+                'develop/common/lib/admin-lte/plugins/daterangepicker/daterangepicker.js',
+                'develop/common/lib/admin-lte/plugins/datepicker/bootstrap-datepicker.js',
+                'develop/common/lib/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js',
+                'develop/common/lib/admin-lte/plugins/fastclick/fastclick.js',
             ],
             'dest': 'webapp/js',
             'dist':'lib.js'
         },
         'style':{
             'src':[
-                'develop/common/lib/startbootstrap-sb-admin/css/bootstrap.css',
-                'develop/common/lib/startbootstrap-sb-admin/css/sb-admin.css',
-                'develop/common/lib/startbootstrap-sb-admin/css/plugins/morris.css',
-                'develop/common/lib/startbootstrap-sb-admin/font-awesome/css/font-awesome.css'
+                'develop/common/lib/font-awesome/css/font-awesome.css',
+                'develop/common/lib/Ionicons/css/ionicons.css',
+                'develop/common/lib/admin-lte/bootstrap/css/bootstrap.min.css',
+                'develop/common/lib/admin-lte/dist/css/AdminLTE.min.css',
+                'develop/common/lib/admin-lte/dist/css/skins/_all-skins.min.css',
+                'develop/common/lib/admin-lte/plugins/iCheck/square/blue.css',
+                'develop/common/lib/admin-lte/plugins/datepicker/datepicker3.css',
+                'develop/common/lib/admin-lte/plugins/daterangepicker/daterangepicker.css',
             ],
             'dest':'webapp/css',
             'dist':'lib.css'
+        },
+        'image':{
+            'src':[
+                'develop/common/lib/admin-lte/plugins/iCheck/square/blue.png',
+            ],
+            'dest':'webapp/css',
         }
     },
     'appResource':{
         'script':{
             'src':[
-                'develop/common/js/app.js',
-                'develop/common/js/routers.js'
+                'develop/common/js/*.js',
                 ],
             'dest':'webapp/js',
             'dist':'app.js'

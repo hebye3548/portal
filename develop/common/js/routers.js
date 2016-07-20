@@ -10,7 +10,6 @@
 					url:'/login',
 					templateUrl:'view/login.html',
 					controller:'LoginCtrl',
-					controllerAs:'loginCtrl',
 					resolve:{
 						loadResource:['$ocLazyLoad',function($ocLazyLoad){
 							return $ocLazyLoad.load([
