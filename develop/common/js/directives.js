@@ -4,10 +4,12 @@
         return {
             restrict: 'A',
             require: '?ngModel',
+            replace:true,
+            template:'<div class="checkbox icheck"><label>'
+                              +'<input type="checkbox" name="rememberMe" ng-model="credentials.rememberMe"> Remember Me'
+                           +'</label></div>',
             link: function($scope, $element, $attrs, $ngModel) {
-                if (!$ngModel) {
-                    return;
-                }
+                console.info($($element))
                 $($element).iCheck({
                     checkboxClass: 'icheckbox_square-blue',
                     radioClass: 'iradio_square-blue',
@@ -32,9 +34,19 @@
         return{
             restrict:'A',
             link:function($scope,$element,$attrs,$require){
-                $($element).on('click',function(event){
+                var element = $($element);
+                if(!element.hasClass('active')){
+                    element.find('.treeview-menu').css('display','none')
+                }
+                element.on('click',function(event){
                     var _self = $(this);
-                    _self.toggleClass('active').find(".treeview-menu").slideToggle().toggleClass('menu-open');
+                    //如果是展开状态
+                    if(_self.hasClass('active')){
+                        _self.removeClass('active');_self.find(".treeview-menu").css('display','block').slideUp();
+                    }else{
+                        //如果是关闭状态
+                        _self.addClass('active');_self.find(".treeview-menu").slideDown();
+                    }
                 });
             }
         };

@@ -34,11 +34,12 @@ module.exports={
     },
    'moduleInfo':[
         {'src':'develop/module/container/','dist':'container'},
+        {'src':'develop/module/index/','dist':'index'},
         {'src':'develop/module/login/','dist':'login'},
         {'src':'develop/module/header/','dist':'header'},
         {'src':'develop/module/footer/','dist':'footer'},
         {'src':'develop/module/sidebar/','dist':'sidebar'},
-        {'src':'develop/module/index/','dist':'index'},
+        {'src':'develop/module/monitor/','dist':'monitor'},
     ],
     'lib':{
         'script':{
@@ -47,7 +48,6 @@ module.exports={
                 'develop/common/lib/angular-ui-router/release/angular-ui-router.js',
                 'develop/common/lib/oclazyload/dist/ocLazyLoad.js',
                 'develop/common/lib/admin-lte/plugins/jQuery/jquery-2.2.3.min.js',
-                'develop/common/lib/admin-lte/bootstrap/js/bootstrap.min.js',
                 'develop/common/lib/admin-lte/plugins/morris/morris.min.js',
                 'develop/common/lib/moment/min/moment.min.js',
                 'develop/common/lib/admin-lte/plugins/iCheck/icheck.js',
@@ -56,7 +56,8 @@ module.exports={
                 'develop/common/lib/admin-lte/plugins/datepicker/bootstrap-datepicker.js',
                 'develop/common/lib/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js',
                 'develop/common/lib/admin-lte/plugins/fastclick/fastclick.js',
-                'develop/common/lib/mockjs/dist/mock.js'
+                'develop/common/lib/mockjs/dist/mock.js',
+                'develop/common/lib/angular-bootstrap/ui-bootstrap-tpls.js'
             ],
             'dest': 'webapp/js',
             'dist':'lib.js'

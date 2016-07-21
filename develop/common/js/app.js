@@ -1,4 +1,4 @@
 'use strict';
 (function() {
-	angular.module('App', ['ui.router','oc.lazyLoad']);
+	angular.module('App', ['ui.router','ui.bootstrap','oc.lazyLoad']);
 })();

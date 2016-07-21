@@ -46,6 +46,19 @@
                         }]
                     }
                 })
+                .state('container.monitor',{
+                    url:'/monitor',
+                    templateUrl:'view/monitor.html',
+                    //contrller:'monitorCtrl',
+                    resolve:{
+                        loadResource:['$ocLazyLoad',function($ocLazyLoad){
+                            $ocLazyLoad.load([
+                                'js/monitor.js',
+                                'js/monitor.css'
+                            ]);
+                        }]
+                    }
+                });
              /*   .state('main.damddos',{
                     url:'/main/damddos',
                     templateUrl:'view/damddos.html',
