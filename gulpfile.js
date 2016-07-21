@@ -4,13 +4,13 @@ var path = require('path');
 var connect = require('gulp-connect');
 var concat = require('gulp-concat');
 var watch = require('gulp-watch');
-var sourcemaps = require('gulp-sourcemaps');
 var rev = require('gulp-rev');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
+var runSequence = require('run-sequence');
 //清理编译文件
 gulp.task('clean',function(){
-  gulp.src(config.clean.src)
+  return gulp.src(config.clean.src)
     .pipe(clean());
 });
 //文件监控
@@ -105,4 +105,10 @@ gulp.task('connect',function(){
           }*/
 	});
 });
-gulp.task('default',['clean','style','script','view','font','mergeApp','lib','connect','watch']);
+gulp.task('default',['clean'],function(cb){
+
+  cb = cb || function() {};
+
+  global.isProd = false;
+  runSequence('style','script','view','font','mergeApp','lib','connect','watch',cb);
+});
