@@ -5,8 +5,12 @@
             restrict: 'A',
             require: '?ngModel',
             replace:true,
+            scope:{
+                'portalIcheckName':'@',
+                'portalIcheckLabel':'@',
+            },
             template:'<div class="checkbox icheck"><label>'
-                              +'<input type="checkbox" name="rememberMe" ng-model="credentials.rememberMe"> Remember Me'
+                              +'<input type="checkbox" name="{{portalIcheckName}}">{{portalIcheckLabel}}'
                            +'</label></div>',
             link: function($scope, $element, $attrs, $ngModel) {
                 console.info($($element))
