@@ -1,0 +1,19 @@
+.small-box {
+    h3 {
+        font-size: 24px;
+        margin: 7px auto;
+        color:rgba(0,0,0,0.35);
+    }
+    p{
+    	font-size:14px;
+    	margin:14px auto;
+    	color:rgba(0,0,0,0.4)
+    }
+    .icon {
+	    color: rgba(0, 0, 0, 0.35);
+	}
+	.small-box-footer {
+	    background: rgba(0, 0, 0, 0.15) none repeat scroll 0 0;
+	    color: rgba(255, 255, 255, 0.8);
+	}
+}

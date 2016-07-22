@@ -41,6 +41,12 @@ module.exports={
         {'src':'develop/module/sidebar/','dist':'sidebar'},
         {'src':'develop/module/monitor/','dist':'monitor'},
     ],
+    'lazyModule':{/*一些按需加载无需合并的模块*/
+        'src':[
+            'develop/common/lib/echarts/dist/echarts.js'
+        ],
+        'dest':'webapp/js',
+    },
     'lib':{
         'script':{
             'src':[
@@ -57,7 +63,7 @@ module.exports={
                 'develop/common/lib/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js',
                 'develop/common/lib/admin-lte/plugins/fastclick/fastclick.js',
                 'develop/common/lib/mockjs/dist/mock.js',
-                'develop/common/lib/angular-bootstrap/ui-bootstrap-tpls.js'
+                'develop/common/lib/angular-bootstrap/ui-bootstrap-tpls.js',
             ],
             'dest': 'webapp/js',
             'dist':'lib.js'

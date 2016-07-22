@@ -35,7 +35,7 @@
                 .state('container.index', {
                     url: '/index',
                     templateUrl: 'view/index.html',
-                    //controller:'IndexCtrl',
+                    controller:'IndexCtrl',
                     resolve: {
                         loadResource: ['$ocLazyLoad', function($ocLazyLoad) {
                             $ocLazyLoad.load([
