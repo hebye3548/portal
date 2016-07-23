@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style1_16.css"><!-- Content Header (Page header) -->
+<section class="content-header">
+    <!-- <h1>DamDDoS Portal<small>&nbsp;&nbsp;Home</small></h1>
+    <ol class="breadcrumb">
+        <li><a ui-sref="contarner.index"><i class="fa fa-home"></i> 首页</a></li>
+    </ol> -->
+</section>
+<!-- Main content -->
+<section class="content ">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>安全监控</h3>
+                    <p>24小时不间断安全监控</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-clock"></i>
+                </div>
+                <a ui-sref="container.monitor" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>安全防护</h3>
+                    <p>严防死守确保用户安全</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-android-lock"></i>
+                </div>
+                <a ui-sref="contarner.safety.block" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>防护记录</h3>
+                    <p>实时更新防护详细记录</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-clipboard"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>告警列表</h3>
+                    <p>实时展示告警详细清单</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-ios-bell"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+    <!-- /.row -->
+    <!-- Main row -->
+    <div class="box box-success">
+        <div class="box-header with-border">
+          <h3 class="box-title">安全防护</h3>
+        </div>
+        <div class="box-body">{{charts.safety}}
+          <div portal-chart chart-option="charts.safety"></div>
+        </div>
+      </div>
+    <!-- /.row (main row) -->
+</section>
+<!-- /.content -->

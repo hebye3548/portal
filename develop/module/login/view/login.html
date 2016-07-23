@@ -17,12 +17,16 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
-                        <div portal-icheck portal-icheck-name="rememberMe" portal-icheck-label=" Remember Me" ng-model="credentials.rememberMe"></div>
+                        <div>
+                            <label>
+                                <input portal-icheck type="checkbox" name="rememberMe" ng-model="credentials.rememberMe"> Remember Me</label>
+                        </div>
                     </div>
                     <!-- /.col -->
                     <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat" ng-disabled="loginForm.$invalid">登陆</button> 
-                        <!-- <button type="submit" ui-sref="container.index" class="btn btn-primary btn-block btn-flat">登陆</button> -->
+                        <!-- 
+                        <button type="submit" class="btn btn-primary btn-block btn-flat" ng-disabled="loginForm.$invalid">登陆</button> -->
+                        <button type="submit" ui-sref="container.index" class="btn btn-primary btn-block btn-flat">登陆</button>
                     </div>
                     <!-- /.col -->
                 </div>

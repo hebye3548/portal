@@ -67,7 +67,12 @@ gulp.task('script',function(){
         .pipe(gulp.dest(config.script.dest));
   }
 });
-//合并并移动libScript
+/*copy lazyModule script*/
+gulp.task('lazyModule',function(){
+    gulp.src(config.lazyModule.src)
+        .pipe(gulp.dest(config.lazyModule.dest));
+});
+//concat & copy libScript
 gulp.task('libScript',function(){
   return gulp.src(config.lib.script.src)
          .pipe(concat(config.lib.script.dist))
@@ -110,5 +115,5 @@ gulp.task('default',['clean'],function(cb){
   cb = cb || function() {};
 
   global.isProd = false;
-  runSequence('style','script','view','font','mergeApp','lib','connect','watch',cb);
+  runSequence('style','script','view','font','mergeApp','lazyModule','lib','connect','watch',cb);
 });

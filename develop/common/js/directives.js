@@ -1,19 +1,15 @@
 //icheck
 (function() {
+    //checkbox && radio
     angular.module('App').directive('portalIcheck', function() {
         return {
             restrict: 'A',
             require: '?ngModel',
             replace:true,
-            scope:{
-                'portalIcheckName':'@',
-                'portalIcheckLabel':'@',
-            },
-            template:'<div class="checkbox icheck"><label>'
-                              +'<input type="checkbox" name="{{portalIcheckName}}">{{portalIcheckLabel}}'
-                           +'</label></div>',
             link: function($scope, $element, $attrs, $ngModel) {
-                console.info($($element))
+                if(!$ngModel){
+                    return;
+                }
                 $($element).iCheck({
                     checkboxClass: 'icheckbox_square-blue',
                     radioClass: 'iradio_square-blue',
@@ -34,13 +30,15 @@
                 });
             }
         };
-    }).directive('portalTreeview',function(){
+    })
+    //sidebar tree
+    .directive('portalTreeview',function(){
         return{
             restrict:'A',
             link:function($scope,$element,$attrs,$require){
                 var element = $($element);
                 if(!element.hasClass('active')){
-                    element.find('.treeview-menu').css('display','none')
+                    element.find('.treeview-menu').css('display','none');
                 }
                 element.on('click',function(event){
                     var _self = $(this);
@@ -54,5 +52,21 @@
                 });
             }
         };
+    })
+    .directive('portalChart',function(){
+        return{
+            restrict:'A',
+            scope:{
+                chartOption:'='
+            },
+            link:function($scope,$element,$attrs){
+                if(!window.echarts){
+                    $.ajax({
+                        url:'js/echarts.js',
+                        dataType:'script',
+                    })
+                }
+            }
+        }
     });
 })();
